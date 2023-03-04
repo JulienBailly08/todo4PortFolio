@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Todo } from '../models/todo';
 
 @Injectable({
   providedIn: 'root'
 })
+  
 export class TodoService {
 
-  ArrayTodos = [
+  private todos:[Todo] = [
     {
       _id: "",
       author: "",
@@ -15,5 +17,8 @@ export class TodoService {
       updatedAt:""
     },
   ];
-  constructor() { }
+
+  constructor() {
+    console.log(this.todos);
+   }
 }
