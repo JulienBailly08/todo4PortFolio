@@ -15,7 +15,6 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit(): void {
     this.todoList = this.todoService.getTodosSource();
-    console.log(this.todoList);
   }
 
   getTodos()
@@ -27,6 +26,8 @@ export class TodoListComponent implements OnInit {
   { }
   
   reloadPage()
-  {}
+  {
+    console.log("on refresh les values de la page")
+  }
 
 }
