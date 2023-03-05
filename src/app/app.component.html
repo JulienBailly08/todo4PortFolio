@@ -1,12 +1,24 @@
-<header>
+<header class="sticky-top">
   <nav class="navbar text-bg-dark">
-    <form class="container-fluid justify-content-start">
-      <button class="btn btn-outline-success me-2" type="button">Main button</button>
-      <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
-    </form>
+    <div class="container-fluid justify-content-start">
+      <button class="btn btn-outline-success me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#pannelFix"
+        aria-controls="pannelFix">Ajouter une carte</button>
+    </div>
   </nav>
 </header>
 
 <main class="container pt-5">
   <router-outlet></router-outlet>
+  <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="pannelFix"
+    aria-labelledby="staticBackdropLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="staticBackdropLabel">Ajout d'une carte</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        <app-create-todo></app-create-todo>
+      </div>
+    </div>
+  </div>
 </main>
