@@ -31,6 +31,8 @@ export class EditTodoComponent implements OnInit {
 
   onSubmit()
   {
+    console.log(this.todoForm.value)
+    console.log(this.todo4Form);
     this.updateSucess.emit();
   }
   

@@ -29,6 +29,7 @@ export class CreateTodoComponent implements OnInit {
 
   onSubmit()
   {
+    console.log(this.todoForm.value);
     this.updateSucess.emit();
   }
   

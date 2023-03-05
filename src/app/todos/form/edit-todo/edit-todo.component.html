@@ -15,8 +15,8 @@
         <label for="contenu" class="form-label">Contenu *</label>
         <div *ngIf="content?.invalid && (content?.dirty || content?.touched)" class="ms-1 badge text-bg-danger">
             <span *ngIf="content?.errors?.['required']">Un contenu est nécessaire</span>
-            <span *ngIf="content?.errors?.['minlength']">Le texte doit contenir au moins
-                {{content?.errors?.['minlength']?.requiredLength}} caractères
+            <span *ngIf="content?.errors?.['minlength']">
+                {{content?.errors?.['minlength']?.requiredLength}} caractères min.
                 ({{content?.errors?.['minlength']?.actualLength}}/{{content?.errors?.['minlength']?.requiredLength}})
             </span>
         </div>
