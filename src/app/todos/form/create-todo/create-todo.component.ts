@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Todo } from 'src/app/models/todo';
 import { Router } from '@angular/router';
@@ -11,8 +11,6 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class CreateTodoComponent implements OnInit {
 
-  @Input()
-  todo4Form!: Todo
   @Output() updateSucess = new EventEmitter<string>();
   response$:any;
   erreurPourInfo = null;
@@ -29,7 +27,8 @@ export class CreateTodoComponent implements OnInit {
 
   onSubmit()
   {
-    console.log(this.todoForm.value);
+    this.todoService.addTodo(this.todoForm.value);
+    this.todoForm.reset();
     this.updateSucess.emit();
   }
   

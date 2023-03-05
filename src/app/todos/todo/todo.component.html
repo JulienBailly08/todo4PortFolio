@@ -25,7 +25,7 @@
 </div>
 
 <div class="col my-3" [hidden]="!isInEditMode">
-    <app-edit-todo [todo4Form]="todo" (updateSucess)="remonterVersParent()"></app-edit-todo>
+    <app-edit-todo [todo4Form]="todo" (editTodo)="updated()"></app-edit-todo>
     <div class="row">
         <button class="col btn btn-outline-secondary" (click)="goEdit()">
             <i class="bi bi-arrow-90deg-up"></i>

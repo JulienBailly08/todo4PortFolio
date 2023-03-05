@@ -13,9 +13,7 @@ export class EditTodoComponent implements OnInit {
 
   @Input()
   todo4Form!: Todo
-  @Output() updateSucess = new EventEmitter<string>();
-  response$:any;
-  erreurPourInfo = null;
+  @Output() editTodo = new EventEmitter<string>();
   todoForm!: FormGroup;
 
   constructor(private fb: FormBuilder, private todoService:TodoService, private router: Router) { }
@@ -31,9 +29,7 @@ export class EditTodoComponent implements OnInit {
 
   onSubmit()
   {
-    console.log(this.todoForm.value)
-    console.log(this.todo4Form);
-    this.updateSucess.emit();
+    this.editTodo.emit();
   }
   
   get title() {

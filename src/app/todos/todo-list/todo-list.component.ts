@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges} from '@angular/core';
 import { Todo } from 'src/app/models/todo';
 import { TodoService } from 'src/app/services/todo.service';
 
@@ -10,11 +10,24 @@ import { TodoService } from 'src/app/services/todo.service';
 export class TodoListComponent implements OnInit {
 
   todoList: Todo[] | undefined;
+  @Input() createTodo: any
+  @Input() hasToUpdate:any
 
   constructor(private todoService:TodoService) { }
 
   ngOnInit(): void {
-    this.todoList = this.todoService.getTodosSource();
+    this.todoList = this.todoService.getTodos();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!changes['hasToUpdate'].isFirstChange())
+    {
+      if (changes['hasToUpdate'].currentValue !== changes['hasToUpdate'].previousValue)
+      {
+        this.todoList = this.todoService.getTodos();
+      }
+    }
+   ;
   }
 
   getTodos()
@@ -22,9 +35,10 @@ export class TodoListComponent implements OnInit {
     return this.todoList;
   }
 
+  // va servir sur le supression
   reloadTodo($event:any)
   { }
-  
+
   reloadPage()
   {
     console.log("on refresh les values de la page")

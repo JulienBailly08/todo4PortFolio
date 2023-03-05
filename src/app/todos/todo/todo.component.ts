@@ -55,7 +55,7 @@ export class TodoComponent implements OnInit {
     }, 2000);
   }
   // Informer le parent des modfis existantes sur le component
-  remonterVersParent()
+  updated()
   {
     this.goEdit();
     this.update.emit();

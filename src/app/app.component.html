@@ -8,7 +8,7 @@
 </header>
 
 <main class="container pt-5">
-  <router-outlet></router-outlet>
+  <app-todo-list [hasToUpdate]="needUpdate"></app-todo-list>
   <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="pannelFix"
     aria-labelledby="staticBackdropLabel">
     <div class="offcanvas-header">
@@ -17,7 +17,7 @@
     </div>
     <div class="offcanvas-body">
       <div>
-        <app-create-todo></app-create-todo>
+        <app-create-todo (updateSucess)="refairedescendreInfo()"></app-create-todo>
       </div>
     </div>
   </div>
