@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Todo } from 'src/app/models/todo';
 import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
@@ -8,9 +9,24 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class TodoListComponent implements OnInit {
 
+  todoList: Todo[] | undefined;
+
   constructor(private todoService:TodoService) { }
 
   ngOnInit(): void {
+    this.todoList = this.todoService.getTodosSource();
+    console.log(this.todoList);
   }
+
+  getTodos()
+  {
+    return this.todoList;
+  }
+
+  reloadTodo($event:any)
+  { }
+  
+  reloadPage()
+  {}
 
 }
