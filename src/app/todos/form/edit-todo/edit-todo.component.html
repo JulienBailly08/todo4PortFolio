@@ -1,6 +1,6 @@
-<h3 class="my-3">Mise à jour de la carte</h3>
+<h3 class="text-center my-3">Mise à jour de note</h3>
 
-<form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+<form class="car-body" [formGroup]="todoForm" (ngSubmit)="onSubmit()">
     <div class="mb-3" id="zoneEntete">
         <label for="titre" class="form-label">Titre *</label>
         <input type="text" formControlName="title" class="form-control" id="titre" placeholder="La vie en montagne"
@@ -24,10 +24,9 @@
             required>
         </textarea>
     </div>
-    <div class="mb-3">
-        <input [attr.disabled]="true" class="form-control text-end" type="text" id="auteur" formControlName="author">
+    <div class="card-footer" id="footer-card">
     </div>
-    <div class="row">
+    <div class="d-flex">
         <button type="submit" class="col btn btn-outline-primary" [disabled]="todoForm.invalid">
             <i class="bi bi-check2-all"></i>
         </button>
@@ -35,5 +34,4 @@
             <i class="bi bi-arrow-90deg-up"></i>
         </button>
     </div>
-
 </form>
