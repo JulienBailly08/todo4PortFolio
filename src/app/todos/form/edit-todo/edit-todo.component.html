@@ -28,7 +28,12 @@
         <input [attr.disabled]="true" class="form-control text-end" type="text" id="auteur" formControlName="author">
     </div>
     <div class="row">
-        <button type="submit" class=" col btn btn-primary" [disabled]="todoForm.invalid">Appliquer les
-            modifications</button>
+        <button type="submit" class="col btn btn-outline-primary" [disabled]="todoForm.invalid">
+            <i class="bi bi-check2-all"></i>
+        </button>
+        <button class="col btn btn-outline-secondary" (click)="goBack()">
+            <i class="bi bi-arrow-90deg-up"></i>
+        </button>
     </div>
+
 </form>

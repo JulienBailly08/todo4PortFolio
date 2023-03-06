@@ -39,7 +39,11 @@ export class TodoComponent implements OnInit {
   }
 
   goEdit() {
-    this.isInEditMode = !this.isInEditMode;
+    this.isInEditMode = true;
+  }
+
+  goBack() {
+    this.isInEditMode = false;
   }
 
   effacerTodo() {
@@ -61,7 +65,7 @@ export class TodoComponent implements OnInit {
   // Informer le parent des modfis existantes sur le component
   updated()
   {
-    this.goEdit();
+    this.goBack();
     this.update.emit();
   }
 

@@ -14,6 +14,7 @@ export class EditTodoComponent implements OnInit {
   @Input()
   todo4Form!: Todo
   @Output() editTodo = new EventEmitter<string>();
+  @Output() retour = new EventEmitter<string>();
   todoForm!: FormGroup;
 
   constructor(private fb: FormBuilder, private todoService:TodoService, private router: Router) { }
@@ -31,6 +32,12 @@ export class EditTodoComponent implements OnInit {
   {
     this.editTodo.emit();
     this.todoService.updateTodo(this.todoForm.value)
+  }
+
+  goBack()
+  {
+    console.log("emit depuis le form");
+    this.retour.emit();
   }
   
   get title() {
