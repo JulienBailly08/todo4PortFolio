@@ -1,6 +1,7 @@
 import { Component, Input, OnInit,Output, EventEmitter } from '@angular/core';
 import { Todo } from '../../models/todo';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-todo',
@@ -30,7 +31,7 @@ export class TodoComponent implements OnInit {
   animationDone:boolean = false;
   isInEditMode:boolean = false;
   
-  constructor() {
+  constructor(private todoService:TodoService) {
     this.idPicsum = Math.floor(Math.random() * 150)
   }
 
@@ -41,7 +42,9 @@ export class TodoComponent implements OnInit {
     this.isInEditMode = !this.isInEditMode;
   }
 
-  effacerTodo() { }
+  effacerTodo() {
+   this.todoService.deleteTodo(this.todo)
+  }
 
   // Gestion des tempo des effets de suppression
   onErase(data: Todo): void

@@ -95,4 +95,8 @@ export class TodoService {
     };
     this.todos = [newTodo, ...this.todos];
   }
+  deleteTodo(todo: Todo): void
+  {
+    this.todos = this.todos.filter(item => (item._id !== todo._id));
+  }
 }
