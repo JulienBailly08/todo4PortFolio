@@ -104,9 +104,12 @@ export class TodoService {
     this.todos.forEach(element => {
       if (element._id === todo._id)
       {
-        element.title = todo.title;
-        element.content = todo.content;
-        element.updatedAt = Date.now().toString();
+        if (element.title !== todo.title || element.content !== todo.content)
+        {
+          element.title = todo.title;
+          element.content = todo.content;
+          element.updatedAt = Date.now().toString();
+        }
       }
     });
   }
