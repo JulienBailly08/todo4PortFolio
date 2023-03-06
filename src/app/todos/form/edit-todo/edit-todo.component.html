@@ -25,8 +25,7 @@
         </textarea>
     </div>
     <div class="mb-3">
-        <label for="auteur" class="form-label">Auteur</label>
-        <input type="text" id="auteur" formControlName="author">
+        <input [attr.disabled]="true" class="form-control text-end" type="text" id="auteur" formControlName="author">
     </div>
     <div class="row">
         <button type="submit" class=" col btn btn-primary" [disabled]="todoForm.invalid">Appliquer les

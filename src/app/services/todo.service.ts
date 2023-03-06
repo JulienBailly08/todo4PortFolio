@@ -99,4 +99,15 @@ export class TodoService {
   {
     this.todos = this.todos.filter(item => (item._id !== todo._id));
   }
+  updateTodo(todo: Todo)
+  {
+    this.todos.forEach(element => {
+      if (element._id === todo._id)
+      {
+        element.title = todo.title;
+        element.content = todo.content;
+        element.updatedAt = Date.now().toString();
+      }
+    });
+  }
 }

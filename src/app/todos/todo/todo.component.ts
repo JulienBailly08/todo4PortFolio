@@ -32,7 +32,7 @@ export class TodoComponent implements OnInit {
   isInEditMode:boolean = false;
   
   constructor(private todoService:TodoService) {
-    this.idPicsum = Math.floor(Math.random() * 150)
+    this.idPicsum = Math.floor(Math.random() * 85)
   }
 
   ngOnInit(): void {
@@ -43,11 +43,12 @@ export class TodoComponent implements OnInit {
   }
 
   effacerTodo() {
-   this.todoService.deleteTodo(this.todo)
+    this.todoService.deleteTodo(this.todo)
+    this.onErase();
   }
 
   // Gestion des tempo des effets de suppression
-  onErase(data: Todo): void
+  onErase()
   {
     this.isDelete = true;
     setTimeout(() => {

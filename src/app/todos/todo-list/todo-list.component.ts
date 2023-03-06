@@ -35,13 +35,16 @@ export class TodoListComponent implements OnInit {
     return this.todoList;
   }
 
-  // va servir sur le supression
+  // fire lors de la supression
   reloadTodo($event:any)
-  { }
+  { 
+    this.todoList = this.todoService.getTodos();
+  }
 
+  // fire lors de l'edition d'une carte
   reloadPage()
   {
-    console.log("on refresh les values de la page")
+    this.todoList = this.todoService.getTodos();
   }
 
 }

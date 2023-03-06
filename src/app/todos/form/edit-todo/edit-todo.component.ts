@@ -23,13 +23,14 @@ export class EditTodoComponent implements OnInit {
       _id:[this.todo4Form._id],
       title: [this.todo4Form.title,Validators.required],
       content: [this.todo4Form.content, [Validators.required, Validators.minLength(8)]],
-      author:[this.todo4Form.author],
+      author:[this.todo4Form.author]
     })
   }
 
   onSubmit()
   {
     this.editTodo.emit();
+    this.todoService.updateTodo(this.todoForm.value)
   }
   
   get title() {
