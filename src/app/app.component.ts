@@ -6,10 +6,11 @@ import { Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   public needUpdate: boolean = false;
-  refairedescendreInfo()
+  reloadNCloseModal(button: any)
   {
+    button.click();
     this.needUpdate = !this.needUpdate;
   }
-
 }

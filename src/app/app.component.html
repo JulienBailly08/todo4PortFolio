@@ -1,23 +1,22 @@
 <header class="sticky-top">
   <nav class="navbar text-bg-dark">
     <div class="container-fluid justify-content-start">
-      <button class="btn btn-outline-success me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#pannelFix"
-        aria-controls="pannelFix">Ajouter une carte</button>
+      <button #button class="btn btn-outline-success me-2" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#pannelFix" aria-controls="pannelFix">Ajouter une carte</button>
     </div>
   </nav>
 </header>
 
 <main class="container pt-5">
   <app-todo-list [hasToUpdate]="needUpdate"></app-todo-list>
-  <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="pannelFix"
-    aria-labelledby="staticBackdropLabel">
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="pannelFix" aria-labelledby="staticBackdropLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="staticBackdropLabel">Ajout d'une carte</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <div>
-        <app-create-todo (updateSucess)="refairedescendreInfo()"></app-create-todo>
+        <app-create-todo (updateSucess)="reloadNCloseModal(button)"></app-create-todo>
       </div>
     </div>
   </div>
