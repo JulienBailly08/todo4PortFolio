@@ -1,6 +1,6 @@
 <div *ngIf="todoList" class="mt-5">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
-        <app-todo *ngFor="let todo of todoList" [todo]="todo" (deleteSucess)="reloadTodo($event)"
+        <app-todo @makeboard *ngFor="let todo of todoList" [todo]="todo" (deleteSucess)="reloadTodo($event)"
             (update)="reloadPage()">
         </app-todo>
     </div>

@@ -1,5 +1,5 @@
-<div class="col my-3 card" style="width: 18rem;" [@fade]="this.isDelete" [ngClass]="{'disparition':this.animationDone}"
-    [hidden]="isInEditMode">
+<div class="col my-3 card card-visible" style="width: 18rem;" [@AnimDelete]="this.isDelete" [hidden]="isInEditMode"
+    [@edition]="isInEditMode">
     <span class="devantImg m-1 badge rounded-pill text-bg-dark" *ngIf="todo.createdAt!=todo.updatedAt">Mis à jour
         le
         {{todo.updatedAt|date:'shortDate'}} à {{todo.updatedAt|date:'H:mm'}}</span>
@@ -22,6 +22,6 @@
     </div>
 </div>
 
-<div class="col my-3 card" [hidden]="!isInEditMode">
+<div class="col my-3 card" [hidden]="!isInEditMode" [@edition]="!isInEditMode">
     <app-edit-todo [todo4Form]="todo" (retour)="goBack()" (editTodo)="updated()"></app-edit-todo>
 </div>
