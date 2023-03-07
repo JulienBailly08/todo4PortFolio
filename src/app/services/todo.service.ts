@@ -11,7 +11,7 @@ export class TodoService {
     {
       _id: "8",
       author: "Ouam",
-      content: "Réalisation d'un CRUD front avec Angular. Le rechargement de page efface le tableau :p.",
+      content: "Reprise d'Angular, en fait le front c'est sympa aussi :D",
       createdAt: "2023-03-08T14:25:40.320+00:00",
       title: "Bienvenue !",
       updatedAt:"2023-03-08T14:25:40.320+00:00"
